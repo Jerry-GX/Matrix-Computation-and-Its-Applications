@@ -1,7 +1,7 @@
-rou=input('ÇëÊäÈëÑ¹Ëõ±È¦Ñ£º');
+rou=input('è¯·è¾“å…¥å‹ç¼©æ¯”Ïï¼š');
 %rou=1.5;
-n=256; %Í¼Ïñ´óĞ¡Îªn*n
-k=n*n/(rou*(2*n+1)); %±£ÁôÆæÒìÖµµÄ¸öÊı
+n=256; %å›¾åƒå¤§å°ä¸ºn*n
+k=n*n/(rou*(2*n+1)); %ä¿ç•™å¥‡å¼‚å€¼çš„ä¸ªæ•°
 display(k);
 
 I=imread('lena.bmp');
@@ -20,14 +20,14 @@ for i=1:k
 end
 K=uint8(K);
 figure
-subplot(1,2,1),imshow(I),title('Ô­Ê¼Í¼Ïñ');
-subplot(1,2,2),imshow(K),title('Ñ¹Ëõ±ÈÎª16µÄÑ¹ËõÍ¼Ïñ');
+subplot(1,2,1),imshow(I),title('åŸå§‹å›¾åƒ');
+subplot(1,2,2),imshow(K),title('å‹ç¼©æ¯”ä¸ºÏçš„å‹ç¼©å›¾åƒ');
 
-%¼ÆËãMSEºÍPSNR
+%è®¡ç®—MSEå’ŒPSNR
 [m,n]=size(I);
 MSE = sum(( double(I(:)) - double(K(:)) ).^2);
 MSE = MSE/(m*n);
-%a=reshape(double(I),65536,1); %ÏòÁ¿»¯Ëã·¨
+%a=reshape(double(I),65536,1); %å‘é‡åŒ–ç®—æ³•
 %b=reshape(double(K),65536,1);%x=a-b;
 %MSE=(1/65536)*(norm(x,2))*(norm(x,2));
 PSNR=10*log10((255*255)/MSE);
